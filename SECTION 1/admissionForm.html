@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <h1>Student Admission Form</h1>
+    <hr>
+    <form>
+        <label>Student Name</label>
+        <input type="text">
+        <br>
+        <br>
+        <label>Email</label>
+        <input type="email">
+        <br>
+        <br>
+        <label>Date of Birth</label>
+        <input type="date">
+        <br>
+        <br>
+        <label for="gender">Gender</label>
+        <input type="radio" name="gender">Male
+        <input type="radio" name="gender">Female
+        <br>
+        <br>
+        <label>Course</label>
+        <select name="" id="">
+            <option>Select</option>
+            <option>MERN Stack</option>
+            <option>Data Analytics</option>
+            <option>Cloud Computing</option>
+            <option>Django</option>
+            <option>Data Structures</option>
+        </select>
+        <br>
+        <br>
+        <label>College Name</label>
+        <input type="text" list="college">
+        <datalist id="college">
+            <option>SRM</option>
+            <option>RR</option>
+            <option>BBD</option>
+            <option>PSIT</option>
+            <option>IIT</option>
+            <option>MGIMT</option>
+        </datalist>
+        <br>
+        <br>
+        <label>Address</label>
+        <textarea></textarea>
+        <br>
+        <br>
+        <label for="file">Upload Image</label>
+        <input hidden id="file" type="file">
+        <br>
+        <br>
+        <label>Accept Terms & Conditions:</label>
+        <input type="checkbox">
+        <br>
+        <br>
+        <details>
+            <summary>
+                T&C
+            </summary>
+            <p>Lorem ipsum dolor sit, amet consectetur adipisicing elit. Laudantium culpa dignissimos saepe cumque, aperiam recusandae. Deserunt vitae dolor incidunt? Ad provident tempore veritatis doloremque numquam beatae facere laborum commodi accusantium.</p>
+        </details>
+        <button>Submit</button>
+    </form>
+</body>
+</html>
