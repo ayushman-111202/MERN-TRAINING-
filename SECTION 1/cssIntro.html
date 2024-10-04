@@ -3,6 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="style.css">
     <style>
         * {
             background-color: yellow;
@@ -15,12 +16,35 @@
             color: red;
             font-size: 50px;
         }
+
+        .myclass {
+            text-align: center;
+            color: magenta;
+        }
+
+        #myid {
+            color: rgb(255, 0, 60);
+        }
+
+        .myclass2 {
+            color: blueviolet !important;
+        }
+
+        #myid2 {
+            color: chartreuse;
+        }
+
+
     </style>
     <title>Document</title>
 </head>
 <body>
     <h1 style="color: red; font-size: 50px;">Incline CSS is used to style individual tags only.</h1>
     <p>Internal CSS is used to style an entire page at once.</p>
-    <p>Name selectors are used to select element by their names.</p>
+    <p class="myclass">Name selectors are used to select element by their names.</p>
+    <h2 class="myclass">Class selectors are used to select elements by their class name.</h2>
+    <h3 id="myid">Id elements are used to select elements by their id</h3>
+    <h4 class="myclass2" id="myid2" style="color: white;">Priority of CSS : Name Selector < Class Selector < ID Selector < Inline CSS < !important(keyword in CSS properties)</h4>
+    <button class="btn">External CSS</button>
 </body>
 </html>
