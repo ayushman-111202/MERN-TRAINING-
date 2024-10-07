@@ -1,0 +1,147 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: Poppins ;
+}
+
+body {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    height: 100vh;
+    background-color: bisque;
+}
+
+.card {
+    width: 50%;
+    height: 70%;
+    border-radius: 30px;
+    display: flex;
+    background-color: rgba(254, 196, 119, 0.801);
+}
+
+.contactform, .image {
+    height: 100%;
+    width: 50%;
+}
+
+.contactform {
+    width: 60%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    font-size: 24px;
+    color: rgba(0, 0, 0, 0.699);
+    font-weight: bolder;
+    border-top-left-radius: 30px;
+    border-bottom-left-radius: 30px;
+    background-color: coral;
+}
+
+.contactform>form {
+    width: 80%;
+    height: 80%;
+    color: black;
+    padding-left: 60px ;
+    display: flex;
+    flex-direction: column;
+    /* align-items: center; */
+    /* justify-content: space-evenly; */
+    border-top-left-radius: 30px;
+    border-bottom-left-radius: 30px;
+    background-color: rgba(254, 196, 119, 0.801);
+}
+
+form>input {
+    width: 80%;
+    height: 7%;
+    padding-left: 5px;
+    border-radius: 5px;
+    border-style: none;
+}
+
+.labels {
+    display: flex;
+    font-size: 18px;
+    font-weight: bolder;
+    font-weight: normal;
+}
+
+.labels-top, .labels-bottom {
+    /* display: flex; */
+    padding-top: 35px;
+}
+
+.form-btn {
+    margin-top: 30px;
+    margin-inline: auto;
+    width: 80%;
+    height: 6%;
+    font-size: 18px;
+    color: rgb(49, 34, 34);
+    font-weight: bold;
+    border-radius: 10px;
+    margin-left: 0px;
+    border-style: none;
+    border: 1px solid green;
+    background-color: rgb(86, 239, 188);
+    transition-duration: 0.3s;
+}
+
+.form-btn:hover {
+    background-color: rgb(70, 192, 151);
+    transform: scale(0.95);
+}
+
+.image {
+    width: 40%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    padding-top: 50px;
+    border-left: 10px solid bisque;
+    border-top-right-radius: 30px;
+    border-bottom-right-radius: 30px;
+}
+
+.pic {
+    width: 80%;
+    height: 60%;
+    background-image: url("IMG_6155.JPG");
+    background-size: cover;
+    background-position: center;
+}
+
+.info {
+    width: 100%;
+    height: 30%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+}
+
+.info-para {
+    color: darkred;
+    margin-left: 20px;
+    align-self: flex-start;
+}
+
+.socials {
+    width: 100%;
+    height: 10%;
+    font-size: 36px;
+    display: flex;
+    align-items: center;
+    justify-content: space-evenly;
+    padding-bottom: 15px;
+    border-bottom-right-radius: 30px;  
+}
+
+.socials>a {
+      text-decoration: none;
+      color: black;
+}
