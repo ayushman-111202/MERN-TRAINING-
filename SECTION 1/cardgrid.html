@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Card Grid</title>
+
+    <style>
+
+        * {
+            margin: 0;
+            padding: 0;
+        }
+
+        .row {
+            display: grid;
+            grid-template-columns: repeat(3,1fr);
+            gap: 30px;
+        }
+
+        .card {
+            border: 2px solid red;
+        }
+
+        .card-img {
+            width: 100%;
+            padding: 20px;
+        }
+
+        @media screen and (min-width: 1024px) {
+            .row {
+                grid-template-columns: repeat(4,1fr);
+            }
+        }
+
+    </style>
+
+</head>
+<body>
+    
+    <div class="row">
+
+        <div class="card">
+            <img src="http://ts1.mm.bing.net/th?id=OIP.JR7o3RDg3bW-RwhIaDAXBgHaHa&pid=15.1" alt="">
+
+            <div class="card-content">
+                <p>Brand Name</p>
+                <h3>Sport Shoes</h3>
+            </div>
+            
+        </div>
+        <div class="card">
+            <img src="http://ts1.mm.bing.net/th?id=OIP.JR7o3RDg3bW-RwhIaDAXBgHaHa&pid=15.1" alt="">
+
+            <div class="card-content">
+                <p>Brand Name</p>
+                <h3>Sport Shoes</h3>
+            </div>
+            
+        </div>
+        <div class="card">
+            <img src="http://ts1.mm.bing.net/th?id=OIP.JR7o3RDg3bW-RwhIaDAXBgHaHa&pid=15.1" alt="">
+
+            <div class="card-content">
+                <p>Brand Name</p>
+                <h3>Sport Shoes</h3>
+            </div>
+            
+        </div>
+        <div class="card">
+            <img src="http://ts1.mm.bing.net/th?id=OIP.JR7o3RDg3bW-RwhIaDAXBgHaHa&pid=15.1" alt="">
+
+            <div class="card-content">
+                <p>Brand Name</p>
+                <h3>Sport Shoes</h3>
+            </div>
+            
+        </div>
+
+    </div>
+
+</body>
+</html>
