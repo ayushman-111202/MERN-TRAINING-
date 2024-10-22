@@ -77,4 +77,3 @@ newPrices.forEach((n)=>{
     }
 });
 console.log(n500);
-
