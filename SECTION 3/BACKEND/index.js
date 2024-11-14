@@ -1,8 +1,11 @@
 //importing express
 const express = require('express');
 
-// importing router
+// importing user router
 const UserRouter = require('./routers/userRouter');
+
+// importing product router
+const ProductRouter = require('./routers/productRouter');
 
 //creating an express app
 
@@ -10,8 +13,13 @@ const app = express();
 
 const port = 5000;
 
-// middleware
+// middleware for user
 app.use('/user',UserRouter);
+
+// middleware for product
+app.use('/product',ProductRouter);
+
+
 
 //starting the server
 
