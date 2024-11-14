@@ -3,27 +3,27 @@ const express = require('express');
 const router = express.Router();
 
 //add
-router.get('/add',(req, res) => {
+router.post('/add',(req, res) => {
     res.send('response from user add');
 });
 
 //getall
-router.get('/getall',(req, res) => {
+router.post('/getall',(req, res) => {
     res.send('response from user getall');
 });
 
 //betbyid
-router.get('/getbyid',(req, res) => {
+router.post('/getbyid',(req, res) => {
     res.send('response from user getbyid');
 });
 
 // delete
-router.get('/delete',(req, res) => {
+router.post('/delete',(req, res) => {
     res.send('response from user delete');
 });
 
 //update
-router.get('/update',(req, res) => {
+router.post('/update',(req, res) => {
     res.send('response from user update');
 });
 
