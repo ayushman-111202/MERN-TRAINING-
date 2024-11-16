@@ -4,6 +4,7 @@ const router = express.Router();
 
 //add
 router.post('/add',(req, res) => {
+    console.log(req.body);
     res.send('response from user add');
 });
 

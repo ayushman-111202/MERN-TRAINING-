@@ -14,6 +14,7 @@ const app = express();
 const port = 5000;
 
 // middleware for user
+app.use(express.json());
 app.use('/user',UserRouter);
 
 // middleware for product
