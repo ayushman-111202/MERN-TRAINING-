@@ -15,7 +15,7 @@ router.post('/add', (req, res) => {
 });
 
 //getall
-router.post('/getall', (req, res) => {
+router.get('/getall', (req, res) => {
     Model.find()
         .then((result) => {
             res.status(200).json(result)
@@ -34,7 +34,7 @@ router.get('/getbycity/:city', (req, res) => {
         });
 })
 
-//betbyid
+//getbyid
 router.get('/getbyid/:id', (req, res) => {
     Model.findById(req.params.id)
         .then((result) => {
@@ -44,14 +44,26 @@ router.get('/getbyid/:id', (req, res) => {
         });
 });
 
-// delete
-router.post('/delete', (req, res) => {
-    res.send('response from user delete');
+//delete
+router.delete('/delete/:id', (req, res) => {
+    Model.findByIdAndDelete(req.params.id)
+        .then((result) => {
+            res.status(200).json(result);
+        }).catch((err) => {
+            console.log(err);
+            res.status(500).json(err);
+        });
 });
 
 //update
-router.post('/update', (req, res) => {
-    res.send('response from user update');
+router.put('/update/:id', (req, res) => {
+    Model.findByIdAndUpdate(req.params.id, req.body)
+        .then((result) => {
+            res.status(200).json(result);
+        }).catch((err) => {
+            console.log(err);
+            res.status(500).json(err);
+        });
 });
 
 module.exports = router;
