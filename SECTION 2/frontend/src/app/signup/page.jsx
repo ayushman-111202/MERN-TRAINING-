@@ -1,7 +1,10 @@
 'use client';
 import { IconCheck, IconLoader3 } from '@tabler/icons-react';
+import axios from 'axios';
 import { useFormik } from 'formik';
+import { useRouter } from 'next/navigation';
 import React from 'react';
+import toast from 'react-hot-toast';
 import * as Yup from 'yup';
 
 const SignupSchema = Yup.object().shape({
@@ -27,6 +30,8 @@ const SignupSchema = Yup.object().shape({
 });
 
 const Signup = () => {
+  const router = useRouter()
+
   //initializing formik
   const signupForm = useFormik({
     initialValues: {
@@ -37,10 +42,21 @@ const Signup = () => {
     },
     onSubmit: (values, { resetForm }) => {
       
-      setTimeout(() => {
-        console.log(values);
-      }, 200);
-      //send values to backend
+    //   setTimeout(() => {
+    //     console.log(values);
+    //   }, 2000);
+    //   //send values to backend
+
+      axios.post('http://localhost:5000/user/add', values)
+      .then((result) => {
+        toast.success("Welcome");
+        resetForm();
+        router.push('/login');
+      }).catch((err) => {
+        console.log(err);
+        toast.error("Oops! Something went wrong.");
+      });
+
     },
     validationSchema: SignupSchema
   })

@@ -1,11 +1,8 @@
-//importing express
+//importing express, routers, cors
 const express = require('express');
-
-// importing user router
 const UserRouter = require('./routers/userRouter');
-
-// importing product router
 const ProductRouter = require('./routers/productRouter');
+const cors = require('cors');
 
 //creating an express app
 
@@ -14,13 +11,12 @@ const app = express();
 const port = 5000;
 
 // middleware for user
+app.use(cors({
+    origin : ['http://localhost:3000']
+}));
 app.use(express.json());
 app.use('/user',UserRouter);
-
-// middleware for product
 app.use('/product',ProductRouter);
-
-
 
 //starting the server
 
@@ -52,4 +48,4 @@ app.get('/delete',(req,res) => {
 //starting the server
 app.listen(port, () => {
     console.log('server started');
-} )
+})
