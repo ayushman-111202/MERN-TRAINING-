@@ -40,7 +40,7 @@ const Signup = () => {
       password: '',
       confirmPassword: ''
     },
-    onSubmit: (values, { resetForm }) => {
+    onSubmit: (values, { resetForm, setSubmitting }) => {
       
     //   setTimeout(() => {
     //     console.log(values);
@@ -49,12 +49,13 @@ const Signup = () => {
 
       axios.post('http://localhost:5000/user/add', values)
       .then((result) => {
-        toast.success("Welcome");
+        toast.success("Welcome to the community!");
         resetForm();
         router.push('/login');
       }).catch((err) => {
         console.log(err);
-        toast.error("Oops! Something went wrong.");
+        toast.error(err?.response?.data?.message || 'Something went wrong');
+        setSubmitting(false);
       });
 
     },
