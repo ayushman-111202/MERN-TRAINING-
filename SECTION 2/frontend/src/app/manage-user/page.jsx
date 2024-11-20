@@ -4,7 +4,7 @@ import React, { useEffect, useState } from 'react';
 
 const ManageUser = () => {
 
-    
+
     const [userList, setuserList] = useState([]);
     const [loading, setLoading] = useState(false);
 
@@ -41,9 +41,9 @@ const ManageUser = () => {
                             </thead>
                             <tbody>
                                 {
-                                    userList.map( (user) => {
+                                    userList.map((user) => {
                                         return (
-                                            <tr>
+                                            <tr key={user._id}>
                                                 <td>{user._id}</td>
                                                 <td>{user.name}</td>
                                                 <td>{user.email}</td>
