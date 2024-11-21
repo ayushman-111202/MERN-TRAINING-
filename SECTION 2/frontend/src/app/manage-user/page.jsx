@@ -1,7 +1,9 @@
 'use client';
 import { IconPencil, IconTrash } from '@tabler/icons-react';
 import axios from 'axios';
+import Link from 'next/link';
 import React, { useEffect, useState } from 'react';
+import toast from 'react-hot-toast';
 
 const ManageUser = () => {
 
@@ -19,6 +21,19 @@ const ManageUser = () => {
     useEffect(() => {
         fetchUsers();
     }, []);
+
+    const deleteUser = async (id) => {
+
+        if(!confirm('Are you sure you want to delete this user?')) return;
+
+        const res = await axios.delete(`http://localhost:5000/user/delete/${id}`);
+        if (res.status === 200) {
+            fetchUsers();
+            toast.success('User removed Successfully');
+        } else {
+            toast.error('Failed to remove the User')
+        }
+    }
 
     return (
         <div className='h-screen bg-gray-200'>
@@ -38,6 +53,7 @@ const ManageUser = () => {
                                     <th className='p-2'>Email</th>
                                     <th className='p-2'>City</th>
                                     <th className='p-2'>Registered At</th>
+                                    <th className='p-2 border border-slate-800' colSpan={2}></th>
                                 </tr>
                             </thead>
                             <tbody>
@@ -45,20 +61,23 @@ const ManageUser = () => {
                                     userList.map((user) => {
                                         return (
                                             <tr key={user._id}>
-                                                <td>{user._id}</td>
-                                                <td>{user.name}</td>
-                                                <td>{user.email}</td>
-                                                <td>{user.city}</td>
-                                                <td>{user.createdAt}</td>
-                                                <td className='p-2 border border-gray-300'>
-                                                    <button className='bg-red-500 text-white px-2 py-1 rounded-full'>
+                                                <td className='text-center'>{user._id}</td>
+                                                <td className='text-center'>{user.name}</td>
+                                                <td className='text-center'>{user.email}</td>
+                                                <td className='text-center'>{user.city}</td>
+                                                <td className='text-center'>{user.createdAt}</td>
+                                                <td className='p-2 border border-gray-300 text-center'>
+                                                    <button
+                                                        onClick={() => { deleteUser(user._id) }}
+                                                        className='bg-red-500 text-white px-2 py-1 rounded-full'>
                                                         <IconTrash />
                                                     </button>
                                                 </td>
-                                                <td className='p-2 border border-gray-300'>
-                                                    <button className='bg-slate-500 text-white px-2 py-1 rounded-full'>
+                                                <td className='p-2 border border-gray-300 text-center'>
+                                                    <Link href={'/updateuser/' + user._id}
+                                                        className='bg-slate-500 text-white px-2 py-1 rounded-full block w-fit'>
                                                         <IconPencil />
-                                                    </button>
+                                                    </Link>
                                                 </td>
                                             </tr>
                                         )
