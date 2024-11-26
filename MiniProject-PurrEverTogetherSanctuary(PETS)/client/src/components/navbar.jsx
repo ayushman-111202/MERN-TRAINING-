@@ -1,4 +1,5 @@
 import { Icon24Hours, IconBrandFacebook, IconBrandInstagram, IconBrandLinkedin, IconBrandX, IconSoup } from '@tabler/icons-react'
+import Link from 'next/link';
 import React from 'react'
 
 const Navbar = () => {
@@ -6,7 +7,7 @@ const Navbar = () => {
         <div>
 
             {/* ========== HEADER ========== */}
-            <header className="flex flex-wrap bg-rose-200 md:justify-start md:flex-nowrap z-50 w-full py-5">
+            <header className="flex flex-wrap bg-yellow-300 md:justify-start md:flex-nowrap z-50 w-full py-5">
 
                 {/* Navbar */}
                 <nav className="relative max-w-[95%] w-full flex flex-wrap md:grid md:grid-cols-12 basis-full items-center md:px-4 mx-auto">
@@ -38,16 +39,15 @@ const Navbar = () => {
                         id="hs-navbar-hcail"
                         aria-labelledby="hs-navbar-hcail-collapse"
                     >
-                        <div className="flex flex-col md:px-2 md:flex-row md:justify-end md:items-center md:gap-y-0 md:gap-x-5">
+                        <div className="flex flex-col font-semibold md:px-2 md:flex-row md:justify-end md:items-center md:gap-y-0 md:gap-x-5">
 
                             <div>
-                                <a
-                                    className="relative inline-block text-black focus:outline-none before:absolute before:bottom-0.5 before:start-0 before:-z-[1] before:w-full before:h-1 before:bg-lime-400 dark:text-white"
-                                    href="#"
-                                    aria-current="page"
+                                <Link
+                                    className="inline-block text-black hover:text-gray-600 focus:outline-none focus:text-gray-600 dark:text-white dark:hover:text-neutral-300 dark:focus:text-neutral-300"
+                                    href='Home'
                                 >
                                     Home
-                                </a>
+                                </Link>
                             </div>
 
                             <div>
@@ -73,7 +73,17 @@ const Navbar = () => {
                                     className="inline-block text-black hover:text-gray-600 focus:outline-none focus:text-gray-600 dark:text-white dark:hover:text-neutral-300 dark:focus:text-neutral-300"
                                     href="#"
                                 >
-                                    Adapt
+                                    Browse Pets
+                                </a>
+                            </div>
+
+
+                            <div>
+                                <a
+                                    className="inline-block text-black hover:text-gray-600 focus:outline-none focus:text-gray-600 dark:text-white dark:hover:text-neutral-300 dark:focus:text-neutral-300"
+                                    href="#"
+                                >
+                                    Contact
                                 </a>
                             </div>
 
@@ -85,7 +95,7 @@ const Navbar = () => {
                                     Donate
                                 </a>
                             </div>
-
+                            
                         </div>
                     </div>
                     {/* End Pages */}
@@ -137,23 +147,19 @@ const Navbar = () => {
                     {/* Button Group */}
                     <div className="flex items-center gap-x-1 md:gap-x-2 ms-auto py-1 md:ps-6 md:order-4 md:col-span-4">
 
-                        <div>
-                            <a
-                                // className="inline-block text-black hover:text-gray-600 focus:outline-none focus:text-gray-600 dark:text-white dark:hover:text-neutral-300 dark:focus:text-neutral-300"
-                                className="py-2 px-3 inline-flex items-center gap-x-2 text-sm font-medium rounded-xl bg-slate-400 border border-gray-200 text-black hover:bg-gray-100 focus:outline-none focus:bg-gray-100 disabled:opacity-50 disabled:pointer-events-none dark:bg-neutral-900 dark:border-neutral-700 dark:hover:bg-white/10 dark:text-white dark:hover:text-white dark:focus:text-white"
-                                href="#"
-                            >
-                                Contact
-                            </a>
-                        </div>
-
                         <button
                             type="button"
-                            className="py-2 px-3 inline-flex items-center gap-x-2 text-sm font-medium rounded-xl bg-blue-400 border border-gray-200 text-black hover:bg-gray-100 focus:outline-none focus:bg-gray-100 disabled:opacity-50 disabled:pointer-events-none dark:bg-neutral-900 dark:border-neutral-700 dark:hover:bg-white/10 dark:text-white dark:hover:text-white dark:focus:text-white"
+                            className="py-2 px-3 inline-flex items-center gap-x-2 text-md font-semibold rounded-xl bg-slate-400 text-black hover:bg-gray-100 focus:outline-none focus:bg-gray-100 disabled:opacity-50 disabled:pointer-events-none dark:bg-neutral-900 dark:border-neutral-700 dark:hover:bg-white/10 dark:text-white dark:hover:text-white dark:focus:text-black"
+                        >
+                            Sign up
+                        </button>
+                        <button
+                            type="button"
+                            className="py-2 px-3 inline-flex items-center gap-x-2 text-md font-semibold rounded-xl bg-slate-400 text-black hover:bg-gray-100 focus:outline-none focus:bg-gray-100 disabled:opacity-50 disabled:pointer-events-none dark:bg-neutral-900 dark:border-neutral-700 dark:hover:bg-white/10 dark:text-white dark:hover:text-white dark:focus:text-black"
                         >
                             Sign in
                         </button>
-                        
+
                         <div className="md:hidden">
                             <button
                                 type="button"
@@ -210,4 +216,4 @@ const Navbar = () => {
     )
 }
 
-export default Navbar
+export default Navbar;
