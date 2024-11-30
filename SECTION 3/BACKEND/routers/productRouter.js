@@ -5,7 +5,7 @@ const router = express.Router();
 // add
 router.get('/add',(req, res) => {
     res.send('response from product add');
-})
+});
 
 //getall
 router.get('/getall',(req, res) => {

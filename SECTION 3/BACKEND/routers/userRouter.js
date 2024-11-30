@@ -30,6 +30,28 @@ router.get('/getall', (req, res) => {
         });
 });
 
+//update
+router.put('/update/:id', (req, res) => {
+    Model.findByIdAndUpdate(req.params.id, req.body)
+        .then((result) => {
+            res.status(200).json(result);
+        }).catch((err) => {
+            console.log(err);
+            res.status(500).json(err);
+        });
+});
+
+//delete
+router.delete('/delete/:id', (req, res) => {
+    Model.findByIdAndDelete(req.params.id)
+        .then((result) => {
+            res.status(200).json(result);
+        }).catch((err) => {
+            console.log(err);
+            res.status(500).json(err);
+        });
+});
+
 //denotes url parameter
 router.get('/getbycity/:city', (req, res) => {
     Model.find({ city: req.params.city })
@@ -50,27 +72,6 @@ router.get('/getbyid/:id', (req, res) => {
         });
 });
 
-//delete
-router.delete('/delete/:id', (req, res) => {
-    Model.findByIdAndDelete(req.params.id)
-        .then((result) => {
-            res.status(200).json(result);
-        }).catch((err) => {
-            console.log(err);
-            res.status(500).json(err);
-        });
-});
-
-//update
-router.put('/update/:id', (req, res) => {
-    Model.findByIdAndUpdate(req.params.id, req.body)
-        .then((result) => {
-            res.status(200).json(result);
-        }).catch((err) => {
-            console.log(err);
-            res.status(500).json(err);
-        });
-});
 
 router.post('/authenticate', (req, res) => {
     Model.findOne(req.body)
